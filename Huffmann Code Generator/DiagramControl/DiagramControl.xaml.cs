@@ -174,7 +174,7 @@ namespace Huffmann_Code_Generator.DiagramControl
             // Punkte zeichnen
             foreach (var point in Points)
             {
-                drawingContext.DrawEllipse(Brushes.Black, PenBlack, FixPoint(point), 1, 1);
+                drawingContext.DrawEllipse(Brushes.Black, PenBlack, FixPoint(point), this.ActualWidth/250, this.ActualHeight/250);
 
                 drawingContext.DrawText(
                     GetFormattedText(point.Caption, Brushes.Black),
@@ -196,7 +196,7 @@ namespace Huffmann_Code_Generator.DiagramControl
             // ZusatzPunkte zeichnen
             foreach (var point in AdditionalPoints)
             {
-                drawingContext.DrawEllipse(Brushes.Blue, PenBlue, FixPoint(point), 1, 1);
+                drawingContext.DrawEllipse(Brushes.Blue, PenBlue, FixPoint(point), this.ActualWidth / 250, this.ActualHeight / 250);
                 // Beschriftung Zusatzpunkte
                 //drawingContext.DrawText(
                 //    GetFormattedText(point.Caption, Brushes.Blue),
