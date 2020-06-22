@@ -307,14 +307,6 @@ namespace Huffmann_Code_Generator.DiagramControl
                 DiagItems.Add(NewItem);                
             }
 
-
-            // Reihenfolge aller Optimalcode Strings umdrehen
-            foreach(var item in MessageItems)
-            {
-                char[] charArray = item.Optimalcode.ToCharArray();
-                Array.Reverse(charArray);
-                item.Optimalcode = new string(charArray);
-            }
                 this.Render();
             
         }
@@ -329,15 +321,14 @@ namespace Huffmann_Code_Generator.DiagramControl
             if(messageItemsString.Length == 1)
             {
                 var exp = MessageItems.Where(x => x.Character == messageItemsString).FirstOrDefault();
-                exp.Optimalcode += value;
+                exp.Optimalcode = value + exp.Optimalcode;  // WErt links anfügen -> dann muss am Ende dei Reihenfolge nicht gedreht werden
                 return;
             }
-
 
             var items = messageItemsString.Split('+');
             foreach (var item in items) {
                 var exp = MessageItems.Where(x => x.Character == item).FirstOrDefault();
-                exp.Optimalcode += value;
+                exp.Optimalcode = value + exp.Optimalcode;
             }
         }
     }
