@@ -242,7 +242,7 @@ namespace Huffmann_Code_Generator.DiagramControl
 
         #endregion
 
-
+        #region "Calculation"
 
         /// <summary>
         /// Punkte zum zeichnen berechnen
@@ -331,5 +331,7 @@ namespace Huffmann_Code_Generator.DiagramControl
                 exp.Optimalcode = value + exp.Optimalcode;
             }
         }
+
+        #endregion 
     }
 }

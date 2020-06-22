@@ -48,6 +48,17 @@ namespace Huffmann_Code_Generator.Model
             CalculateProbabilities();
             OrderMessageItems();
         }
+
+        public void ExportCodetable(string FileName)
+        {
+            var file = new System.IO.StreamWriter(FileName, false);
+            file.WriteLine("Key;Value");
+            foreach(var item in MessageItems)
+            {
+                file.WriteLine(item.Character + ";" + item.Optimalcode);
+            }
+            file.Close();
+        }
         #endregion
 
         #region "Private Methods"

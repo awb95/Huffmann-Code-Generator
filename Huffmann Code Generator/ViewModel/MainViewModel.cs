@@ -1,9 +1,12 @@
 ﻿using Huffmann_Code_Generator.Command;
 using Huffmann_Code_Generator.Model;
+using Huffmann_Code_Generator.Resources;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,6 +27,7 @@ namespace Huffmann_Code_Generator.ViewModel
 
             // Comands initialisieren
             CalculateHuffmannCode = new RelayCommand(CalculateHuffmannCodeExecute, CalculateHuffmannCodeCanExecute);
+            ExportCodeTable = new RelayCommand(this.ExportCodeTableExecute, this.ExportCodeTabelCanExecute);
         }
         #endregion
 
@@ -114,6 +118,33 @@ namespace Huffmann_Code_Generator.ViewModel
                 return false;
             else
                 return Message.Length >= 2;
+        }
+
+        public ICommand ExportCodeTable { get; private set; }
+
+        private void ExportCodeTableExecute(object obj)
+        {
+            var saveFileDialog = new SaveFileDialog()
+            {
+                AddExtension = true,
+                CheckPathExists = true,
+                DefaultExt = ".csv",
+                Filter = "CSV-Datei(*.csv)|*.csv|Alle Dateien(*.*)|*.*",
+                Title = Language.export_codetable_dialog_title,
+                FileName = "Codetable.csv"
+            };
+
+            
+            if (saveFileDialog.ShowDialog() ?? false)
+            {
+                HuffmannCodeGenerator.ExportCodetable(saveFileDialog.FileName);                
+            }
+
+        }
+
+        private bool ExportCodeTabelCanExecute(object obj)
+        {
+            return MessageItems != null && MessageItems.Count > 0;
         }
         #endregion
 

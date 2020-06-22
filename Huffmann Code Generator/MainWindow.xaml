@@ -29,22 +29,37 @@
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
 
-        <StackPanel Grid.Column="0" Grid.Row="0" >
-            <Label>
+        <Grid Grid.Column="0" Grid.Row="0" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="auto"/>                
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+                
+            <Label Grid.Row="0" Grid.Column="0">
                 <TextBlock Text="{x:Static lang:Language.enter_msg}"/>
             </Label>
             <TextBox x:Name="Message"
                      Text="{Binding Message, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                      TextWrapping="Wrap" 
-                     AcceptsReturn="True"/>            
+                     AcceptsReturn="True"
+                     Grid.Row="1" Grid.Column="0"/>            
             <Button x:Name="GenerateHuffmanCode"
                     HorizontalAlignment="Center"
                     Margin="5"
                     Content="{x:Static lang:Language.calc_huffmann_code}"
-                    Command="{Binding CalculateHuffmannCode}"/>
-            <TextBlock></TextBlock>
+                    Command="{Binding CalculateHuffmannCode}"
+                    Grid.Row="2" Grid.Column="0"/>
+            <TextBlock Grid.Row="3" Grid.Column="0" />
 
-            <ListView ItemsSource="{Binding MessageItemsView,Mode=OneWay, UpdateSourceTrigger=PropertyChanged}">
+
+            <ListView Grid.Row="4" Grid.Column="0" ItemsSource="{Binding MessageItemsView,Mode=OneWay, UpdateSourceTrigger=PropertyChanged}">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn DisplayMemberBinding="{Binding Character}" Width="auto">
@@ -65,7 +80,15 @@
                     </GridView>
                 </ListView.View>
             </ListView>
-        </StackPanel >
+
+            <Button Command="{ Binding ExportCodeTable}" 
+                Content="{ x:Static lang:Language.export_codetable}"
+                HorizontalAlignment="Center"
+                Grid.Row="5" Grid.Column="0"
+                Margin="5"    />
+
+           
+        </Grid >
 
         <GridSplitter Grid.Column="1"
                       Grid.Row="0" 

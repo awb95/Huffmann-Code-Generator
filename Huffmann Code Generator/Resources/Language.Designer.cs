@@ -97,6 +97,24 @@ namespace Huffmann_Code_Generator.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Export Codetable ähnelt.
+        /// </summary>
+        public static string export_codetable {
+            get {
+                return ResourceManager.GetString("export_codetable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Select the path for the Codetable ähnelt.
+        /// </summary>
+        public static string export_codetable_dialog_title {
+            get {
+                return ResourceManager.GetString("export_codetable_dialog_title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Huffmann-Code ähnelt.
         /// </summary>
         public static string huffmann_code {

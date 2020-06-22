@@ -130,6 +130,12 @@
   <data name="enter_msg" xml:space="preserve">
     <value>Nachricht eingeben</value>
   </data>
+  <data name="export_codetable" xml:space="preserve">
+    <value>Code-Tabelle Exportieren</value>
+  </data>
+  <data name="export_codetable_dialog_title" xml:space="preserve">
+    <value>Speicherort für Codetabelle auswählen</value>
+  </data>
   <data name="huffmann_code" xml:space="preserve">
     <value>Huffmann-Code</value>
   </data>
