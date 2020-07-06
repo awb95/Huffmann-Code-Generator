@@ -129,6 +129,15 @@
   <data name="kompress" xml:space="preserve">
     <value>Komprimieren</value>
   </data>
+  <data name="ofd_filter_all_files" xml:space="preserve">
+    <value>Alle Dateien</value>
+  </data>
+  <data name="ofd_filter_csv_files" xml:space="preserve">
+    <value>CSV-Dateien</value>
+  </data>
+  <data name="ofd_select_codetable" xml:space="preserve">
+    <value>Bitte wählen Sie ine Codetabelle aus</value>
+  </data>
   <data name="open_codetable" xml:space="preserve">
     <value>Codetabelle öffnen</value>
   </data>

@@ -89,10 +89,12 @@ namespace Huffmann_Translator.ViewModel
 			OpenFileDialog OFD = new OpenFileDialog()
 			{
 				CheckFileExists = true,
-				Filter = "CSV Codetable (*.csv)|*.csv|Alle Dateien(*.*)|*.*",
+				Filter = Resources.Language.ofd_filter_csv_files + " (*.csv)|*.csv|" + Resources.Language.ofd_filter_all_files + " (*.*)|*.*",
 				Multiselect = false,
-				Title = "Bitte wählen Sie eine Codetabelle aus"
+				Title = Resources.Language.ofd_select_codetable
 			};
+
+			
 			if (OFD.ShowDialog().HasValue)
 			{
 				this.Model.ReadCodeTable(OFD.FileName);

@@ -97,6 +97,33 @@ namespace Huffmann_Translator.Resources {
         }
         
         /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die All Files ähnelt.
+        /// </summary>
+        public static string ofd_filter_all_files {
+            get {
+                return ResourceManager.GetString("ofd_filter_all_files", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die CSV-Files ähnelt.
+        /// </summary>
+        public static string ofd_filter_csv_files {
+            get {
+                return ResourceManager.GetString("ofd_filter_csv_files", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Sucht eine lokalisierte Zeichenfolge, die Please select a Codetable ähnelt.
+        /// </summary>
+        public static string ofd_select_codetable {
+            get {
+                return ResourceManager.GetString("ofd_select_codetable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Sucht eine lokalisierte Zeichenfolge, die Open Codetable ähnelt.
         /// </summary>
         public static string open_codetable {
